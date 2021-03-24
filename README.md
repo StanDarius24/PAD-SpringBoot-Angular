@@ -24,6 +24,7 @@ This section represents a more detailed version of About section. Project's spec
 * A user should be able to send direct messages to another user by end-to-end encryption
 * Each user should be able to access his own news feed, where he is going to see the last posts of his friends
 * At each photo/post all users in the friends list should be able to comment
+* A user should be able to search for his friends
 
 # Technology Used / Architecture
 
