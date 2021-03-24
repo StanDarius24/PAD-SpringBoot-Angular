@@ -32,7 +32,7 @@ This section aims to present you the technologies used in this project.
 
 The project is going to be build with the following technologies/programming languages:
 
-* Gradle - build tool
+* Maven - build tool
 * Java / Springboot - backend
 * React or Angular - frontend
 * MySQL - database
