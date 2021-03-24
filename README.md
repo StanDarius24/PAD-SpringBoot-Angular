@@ -24,6 +24,17 @@ This section represents a more detailed version of About section. Project's spec
 * Each user should be able to access his own news feed, where he is going to see the last posts of his friends
 * At each photo/post all users in the friends list should be able to comment
 
+# Technology Used / Architecture
+
+This section aims to present you the technologies used in this project.
+
+The project is going to be build with the following technologies/programming languages:
+
+* Gradle - build tool
+* Java / Springboot - backend
+* React or Angular - frontend
+* MySQL - database
+
 # Team Members
 
 * Darius Stan
