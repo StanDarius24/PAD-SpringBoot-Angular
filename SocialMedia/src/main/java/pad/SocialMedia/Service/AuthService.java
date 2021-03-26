@@ -1,6 +1,10 @@
 package pad.SocialMedia.Service;
 
 import lombok.AllArgsConstructor;
+import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import pad.SocialMedia.Exceptions.TokenException;
@@ -9,6 +13,9 @@ import pad.SocialMedia.Model.User;
 import pad.SocialMedia.Model.VerificationToken;
 import pad.SocialMedia.Repository.UserRepository;
 import pad.SocialMedia.Repository.VerificationTokenRepository;
+import pad.SocialMedia.Security.JWTProvider;
+import pad.SocialMedia.dto.AuthentificationResponse;
+import pad.SocialMedia.dto.LoginRequest;
 import pad.SocialMedia.dto.RegisterRequest;
 
 import javax.transaction.Transactional;
@@ -25,6 +32,8 @@ public class AuthService {
     private final VerificationTokenRepository verificationTokenRepository;
     private final UserRepository userRepository;
     private final MailServices mailService;
+    private final AuthenticationManager authenticationManager;
+    private final JWTProvider jwtProvider;
 
     @Transactional
     public void signup(RegisterRequest registerRequest)
@@ -64,5 +73,14 @@ public class AuthService {
         user.setEnabled(true);
         userRepository.save(user);
 
+    }
+
+    public AuthentificationResponse login(LoginRequest loginRequest) {
+        Authentication authentication = authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(loginRequest.getUsername(),
+                loginRequest.getPassword()));
+        SecurityContextHolder.getContext().setAuthentication(authentication);
+       String token = jwtProvider.generateToken(authentication);
+
+       return new AuthentificationResponse(token,loginRequest.getUsername());
     }
 }

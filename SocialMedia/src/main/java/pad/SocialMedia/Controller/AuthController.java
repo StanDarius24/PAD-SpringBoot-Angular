@@ -5,6 +5,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import pad.SocialMedia.Service.AuthService;
+import pad.SocialMedia.dto.AuthentificationResponse;
+import pad.SocialMedia.dto.LoginRequest;
 import pad.SocialMedia.dto.RegisterRequest;
 
 @RestController
@@ -21,12 +23,16 @@ public class AuthController {
                 HttpStatus.OK);
     }
 
-    @GetMapping("accountVerification/{token}")
+    @GetMapping("/accountVerification/{token}")
     public ResponseEntity<String> verifyAccount (@PathVariable String token)
     {
         authService.verifyAccount(token);
-
         return new ResponseEntity<>("Account Activated!", HttpStatus.OK);
+    }
+
+    @PostMapping("/login")
+    public AuthentificationResponse login(@RequestBody LoginRequest loginRequest){
+       return authService.login(loginRequest);
     }
 
 }
