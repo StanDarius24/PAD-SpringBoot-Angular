@@ -1,9 +1,9 @@
 package pad.SocialMedia.Service;
 
 import lombok.AllArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
+import pad.SocialMedia.Exceptions.TokenException;
 import pad.SocialMedia.Model.NotificationEmail;
 import pad.SocialMedia.Model.User;
 import pad.SocialMedia.Model.VerificationToken;
@@ -13,6 +13,7 @@ import pad.SocialMedia.dto.RegisterRequest;
 
 import javax.transaction.Transactional;
 import java.time.Instant;
+import java.util.Optional;
 import java.util.UUID;
 
 @Service
@@ -37,7 +38,7 @@ public class AuthService {
         userRepository.save(user);
 
         String token =  generateVerificationToken(user);
-        mailService.sendMail(new NotificationEmail("Please Click here to activate account",
+        mailService.sendMail(new NotificationEmail("Please Click here to activate your account ",
                 user.getEmail(),"http://localhost:8080/auth/accountVerification/" + token));
     }
 
@@ -48,5 +49,20 @@ public class AuthService {
         verificationToken.setUser(user);
         verificationTokenRepository.save(verificationToken);
         return Token;
+    }
+
+    public void verifyAccount(String token) {
+       Optional <VerificationToken> vertkn = verificationTokenRepository.findByToken(token); // Returneaza Optional o smecherie
+                                                        // sa fentam Null-ul (Exemplu Pdss Burger xD)
+
+       fetchUser(vertkn.orElseThrow(() -> new TokenException("Invalid token")));
+    }
+
+    private void fetchUser(VerificationToken verificationToken) {
+        String name = verificationToken.getUser().getUsername();
+        User user = userRepository.findByUsername(name).orElseThrow(() -> new TokenException("User inexistent"));
+        user.setEnabled(true);
+        userRepository.save(user);
+
     }
 }
