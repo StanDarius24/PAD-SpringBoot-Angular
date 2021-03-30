@@ -10,6 +10,6 @@ import lombok.NoArgsConstructor;
 public class AuthentificationResponse {
 
     private String username;
-    private String authentificationTolen;
+    private String authentificationToken;
 
 }

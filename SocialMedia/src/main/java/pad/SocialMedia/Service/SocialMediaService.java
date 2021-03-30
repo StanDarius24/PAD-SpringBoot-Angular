@@ -53,6 +53,11 @@ public class SocialMediaService {
     }
 
     private SocialMediaDto mapToDto(SubPage subPage) {
-    return null;
+    return SocialMediaDto.builder()
+            .socialName(subPage.getName())
+            .description(subPage.getDescription())
+            .id(subPage.getId())
+            .number(subPage.getPosts().size())
+            .build();
     }
 }
