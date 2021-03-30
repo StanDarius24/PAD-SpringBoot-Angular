@@ -75,8 +75,11 @@ public class JWTProvider {
     }
 
     public String getUsernameFromJwt(String token) {
-        Claims claims = parserBuilder().setSigningKey(getPublickey())
-                .build().parseClaimsJws(token).getBody();
+        Claims claims = parserBuilder()
+                .setSigningKey(getPublickey())
+                .build()
+                .parseClaimsJws(token)
+                .getBody();
 
         return claims.getSubject();
     }

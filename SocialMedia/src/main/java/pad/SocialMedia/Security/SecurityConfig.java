@@ -13,6 +13,7 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 import pad.SocialMedia.Service.UserDetailsServiceImplementation;
 
 @EnableWebSecurity
@@ -20,6 +21,7 @@ import pad.SocialMedia.Service.UserDetailsServiceImplementation;
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     private final UserDetailsService userDetailsService;
+    private JWTAuthFilter jwtAuthFilter;
 
 
     @Bean(BeanIds.AUTHENTICATION_MANAGER)
@@ -40,6 +42,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                     .permitAll()
                     .anyRequest()
                     .authenticated();
+
+        httpSecurity.addFilterBefore(jwtAuthFilter, UsernamePasswordAuthenticationFilter.class);
     }
 
     @Autowired
