@@ -5,16 +5,14 @@ import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import pad.SocialMedia.Model.Post;
 import pad.SocialMedia.Model.SubPage;
-import pad.SocialMedia.Service.SocialMediaService;
 import pad.SocialMedia.dto.SocialMediaDto;
 
-import javax.persistence.criteria.CriteriaBuilder;
 import java.util.List;
 
 @Mapper(componentModel = "spring")
-public interface SocialMediaMapper {
+public interface SubpageMapper {
 
-    @Mapping(target = "numberOfPosts" , expression = "java(mapPosts(subpage.getPosts()))")
+    @Mapping(target = "number", expression = "java(mapPosts(subPage.getPosts()))")
     SocialMediaDto mapSocialMediaDto(SubPage subPage);
 
     default Integer mapPosts(List<Post> number)
@@ -22,5 +20,7 @@ public interface SocialMediaMapper {
         return number.size();
     }
 
-
+    @InheritInverseConfiguration
+    @Mapping(target = "posts", ignore = true)
+    SubPage mapSubpage(SocialMediaDto socialMediaDto);
 }

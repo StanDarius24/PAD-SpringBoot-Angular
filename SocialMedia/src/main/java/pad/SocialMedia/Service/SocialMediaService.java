@@ -3,7 +3,9 @@ package pad.SocialMedia.Service;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
-import pad.SocialMedia.Mapper.SocialMediaMapper;
+import pad.SocialMedia.Exceptions.MailSenderException;
+import pad.SocialMedia.Exceptions.SocialMediaException;
+import pad.SocialMedia.Mapper.SubpageMapper;
 import pad.SocialMedia.Model.SubPage;
 import pad.SocialMedia.Repository.SubPageRepository;
 import pad.SocialMedia.dto.SocialMediaDto;
@@ -19,12 +21,12 @@ import static java.util.stream.Collectors.toList;
 public class SocialMediaService {
 
     private final SubPageRepository subPageRepository;
+    private final SubpageMapper subpageMapper;
     @Transactional
     public SocialMediaDto save(SocialMediaDto socialMediaDto)
     {
-       SubPage subPage = mapSocialMediaDto(socialMediaDto);
 
-       SubPage save = subPageRepository.save(subPage);
+        SubPage save = subPageRepository.save(subpageMapper.mapSubpage(socialMediaDto));
        socialMediaDto.setId(save.getId());
 
        return socialMediaDto;
@@ -32,15 +34,7 @@ public class SocialMediaService {
     }
 
 
-    private SubPage mapSocialMediaDto(SocialMediaDto socialMediaDto) {
 
-         return SubPage.builder()
-                .name(
-                        socialMediaDto.getSocialName())
-                .description(
-                        socialMediaDto.getDescription())
-                .build();
-    }
 
     @Transactional
     public List<SocialMediaDto> getAll() {
@@ -48,16 +42,15 @@ public class SocialMediaService {
         return
         subPageRepository.findAll()
                 .stream()
-                .map(this::mapToDto)
+                .map(subpageMapper::mapSocialMediaDto)
                 .collect(toList());
     }
 
-    private SocialMediaDto mapToDto(SubPage subPage) {
-    return SocialMediaDto.builder()
-            .socialName(subPage.getName())
-            .description(subPage.getDescription())
-            .id(subPage.getId())
-            .number(subPage.getPosts().size())
-            .build();
+    public SocialMediaDto getSocialMediaDto(Long id) {
+        SubPage subpage = subPageRepository.findById(id)
+                .orElseThrow(() -> new SocialMediaException("No subreddit found with ID - " + id));
+        return subpageMapper.mapSocialMediaDto(subpage);
     }
+
+
 }

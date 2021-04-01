@@ -10,9 +10,8 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Builder
 public class SocialMediaDto {
-    private String socialName;
+    private Long id;
+    private String name;
     private String description;
     private Integer number;
-    private Long id;
-
 }

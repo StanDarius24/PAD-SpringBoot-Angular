@@ -35,5 +35,12 @@ public class SocialMediaController {
                 .body(socialMediaService
                         .getAll());
     }
+    @GetMapping("/{id}")
+    public ResponseEntity<SocialMediaDto> getSocialMedia(@PathVariable Long id)
+    {
+        return ResponseEntity
+                .status(HttpStatus.OK)
+                .body(socialMediaService.getSocialMediaDto(id));
+    }
 
 }
