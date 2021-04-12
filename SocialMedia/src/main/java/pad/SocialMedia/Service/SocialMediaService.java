@@ -3,9 +3,8 @@ package pad.SocialMedia.Service;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
-import pad.SocialMedia.Exceptions.MailSenderException;
 import pad.SocialMedia.Exceptions.SocialMediaException;
-import pad.SocialMedia.Mapper.SubpageMapper;
+import pad.SocialMedia.Mapper.MapperSubpage;
 import pad.SocialMedia.Model.SubPage;
 import pad.SocialMedia.Repository.SubPageRepository;
 import pad.SocialMedia.dto.SocialMediaDto;
@@ -21,7 +20,7 @@ import static java.util.stream.Collectors.toList;
 public class SocialMediaService {
 
     private final SubPageRepository subPageRepository;
-    private final SubpageMapper subpageMapper;
+    private final MapperSubpage subpageMapper;
     @Transactional
     public SocialMediaDto save(SocialMediaDto socialMediaDto)
     {

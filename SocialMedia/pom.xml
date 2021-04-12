@@ -102,9 +102,6 @@
             <artifactId>xmlunit-core</artifactId>
         </dependency>
 		<!-- https://mvnrepository.com/artifact/org.mapstruct/mapstruct -->
-
-
-
 	</dependencies>
 
 	<build>
