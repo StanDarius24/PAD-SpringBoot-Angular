@@ -10,7 +10,6 @@ import org.springframework.stereotype.Service;
 import pad.SocialMedia.Exceptions.MailSenderException;
 
 
-
 import javax.annotation.PostConstruct;
 import java.io.IOException;
 import java.io.InputStream;
@@ -35,7 +34,7 @@ public class JWTProvider {
             keyStore = KeyStore.getInstance("JKS");
             InputStream resourceAsStream = getClass().getResourceAsStream("/springblog.jks");
             keyStore.load(resourceAsStream, "secret".toCharArray());
-        } catch (KeyStoreException | CertificateException | NoSuchAlgorithmException | IOException e) {
+        } catch ( KeyStoreException | CertificateException | NoSuchAlgorithmException | IOException e ) {
             throw new MailSenderException("Exception occurred while loading keystore", e);
         }
 
@@ -55,7 +54,7 @@ public class JWTProvider {
     private PrivateKey getPrivateKey() {
         try {
             return (PrivateKey) keyStore.getKey("springblog", "secret".toCharArray());
-        } catch (KeyStoreException | NoSuchAlgorithmException | UnrecoverableKeyException e) {
+        } catch ( KeyStoreException | NoSuchAlgorithmException | UnrecoverableKeyException e ) {
             throw new MailSenderException("Exception occured while retrieving public key from keystore", e);
         }
     }
@@ -68,7 +67,7 @@ public class JWTProvider {
     private PublicKey getPublickey() {
         try {
             return keyStore.getCertificate("springblog").getPublicKey();
-        } catch (KeyStoreException e) {
+        } catch ( KeyStoreException e ) {
             throw new MailSenderException("Exception occured while " +
                     "retrieving public key from keystore", e);
         }
@@ -83,8 +82,6 @@ public class JWTProvider {
 
         return claims.getSubject();
     }
-
-
 
 
 }

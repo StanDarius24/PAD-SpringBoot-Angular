@@ -20,8 +20,7 @@ public class MailServices {
     private final JavaMailSender mailSender;
 
     @Async
-    public void sendMail(NotificationEmail notificationEmail)
-    {
+    public void sendMail(NotificationEmail notificationEmail) {
         MimeMessagePreparator messagePreparator = mimeMessage -> {
             MimeMessageHelper messageHelper = new MimeMessageHelper(mimeMessage);
             messageHelper.setFrom("mesiatehnologicagenesis@gmail.com");// sa faceti pls un mail =)))
@@ -29,15 +28,13 @@ public class MailServices {
             messageHelper.setSubject(notificationEmail.getSubject());
             messageHelper.setText(mailContentBuilder.build(notificationEmail.getBody()));
         };
-        try{
+        try {
             mailSender.send(messagePreparator);
             log.info("Activation email send!");
             System.out.println("Activation email send");
-        }
-        catch
-        (MailException e)
-        {
-            throw new MailSenderException("Exceprion occurred when sending email to "+ notificationEmail.getRecipient(),e);
+        } catch
+        ( MailException e ) {
+            throw new MailSenderException("Exceprion occurred when sending email to " + notificationEmail.getRecipient(), e);
         }
     }
 }

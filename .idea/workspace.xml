@@ -6,6 +6,7 @@
       <change afterPath="$PROJECT_DIR$/ChatServer/src/main/java/com/example/chatserver/controller/GreetingController.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/ChatServer/src/main/java/com/example/chatserver/model/Greeting.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/ChatServer/src/main/java/com/example/chatserver/model/HelloMessage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SocialMedia/src/main/java/pad/SocialMedia/Security/CorsConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.name" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/PAD2.iml" beforeDir="false" />
@@ -51,7 +52,6 @@
       <change beforePath="$PROJECT_DIR$/SocialMedia/src/main/java/pad/SocialMedia/dto/RegisterRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/SocialMedia/src/main/java/pad/SocialMedia/dto/RegisterRequest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SocialMedia/src/main/java/pad/SocialMedia/dto/SocialMediaDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/SocialMedia/src/main/java/pad/SocialMedia/dto/SocialMediaDto.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SocialMedia/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/SocialMedia/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SocialMedia/src/test/java/pad/SocialMedia/SocialMediaApplicationTests.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/public/index.html" afterDir="false" />
@@ -64,8 +64,8 @@
       <change beforePath="$PROJECT_DIR$/frontend/src/components/register.component.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/register.component.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/index.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/logo.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/logo.svg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/reportWebVitals.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/reportWebVitals.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/setupTests.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/setupTests.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -85,7 +85,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/ChatServer" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/SocialMedia" />
     <property name="settings.editor.selected.configurable" value="MTHome" />
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -97,6 +97,7 @@
       <option name="presentableId" value="Default" />
       <updated>1618762830777</updated>
       <workItem from="1618762832030" duration="40000" />
+      <workItem from="1619816871010" duration="15000" />
     </task>
     <servers />
   </component>

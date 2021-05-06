@@ -21,28 +21,26 @@ public class SocialMediaService {
 
     private final SubPageRepository subPageRepository;
     private final MapperSubpage subpageMapper;
+
     @Transactional
-    public SocialMediaDto save(SocialMediaDto socialMediaDto)
-    {
+    public SocialMediaDto save(SocialMediaDto socialMediaDto) {
 
         SubPage save = subPageRepository.save(subpageMapper.mapSubpage(socialMediaDto));
-       socialMediaDto.setId(save.getId());
+        socialMediaDto.setId(save.getId());
 
-       return socialMediaDto;
+        return socialMediaDto;
 
     }
-
-
 
 
     @Transactional
     public List<SocialMediaDto> getAll() {
 
         return
-        subPageRepository.findAll()
-                .stream()
-                .map(subpageMapper::mapSocialMediaDto)
-                .collect(toList());
+                subPageRepository.findAll()
+                        .stream()
+                        .map(subpageMapper::mapSocialMediaDto)
+                        .collect(toList());
     }
 
     public SocialMediaDto getSocialMediaDto(Long id) {

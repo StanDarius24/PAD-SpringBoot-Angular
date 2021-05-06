@@ -36,8 +36,7 @@ public class AuthService {
     private final JWTProvider jwtProvider;
 
     @Transactional
-    public void signup(RegisterRequest registerRequest)
-    {
+    public void signup(RegisterRequest registerRequest) {
         User user = new User();
         user.setUsername(registerRequest.getUsername());
         user.setEmail(registerRequest.getEmail());
@@ -46,9 +45,9 @@ public class AuthService {
         user.setEnabled(false);
         userRepository.save(user);
 
-        String token =  generateVerificationToken(user);
+        String token = generateVerificationToken(user);
         mailService.sendMail(new NotificationEmail("Please Click here to activate your account ",
-                user.getEmail(),"http://localhost:8080/auth/accountVerification/" + token));
+                user.getEmail(), "http://localhost:8080/auth/accountVerification/" + token));
     }
 
     private String generateVerificationToken(User user) {
@@ -61,10 +60,10 @@ public class AuthService {
     }
 
     public void verifyAccount(String token) {
-       Optional <VerificationToken> vertkn = verificationTokenRepository.findByToken(token); // Returneaza Optional o smecherie
-                                                        // sa fentam Null-ul (Exemplu Pdss Burger xD)
+        Optional<VerificationToken> vertkn = verificationTokenRepository.findByToken(token); // Returneaza Optional o smecherie
+        // sa fentam Null-ul (Exemplu Pdss Burger xD)
 
-       fetchUser(vertkn.orElseThrow(() -> new TokenException("Invalid token")));
+        fetchUser(vertkn.orElseThrow(() -> new TokenException("Invalid token")));
     }
 
     private void fetchUser(VerificationToken verificationToken) {
@@ -79,8 +78,8 @@ public class AuthService {
         Authentication authentication = authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(loginRequest.getUsername(),
                 loginRequest.getPassword()));
         SecurityContextHolder.getContext().setAuthentication(authentication);
-       String token = jwtProvider.generateToken(authentication);
+        String token = jwtProvider.generateToken(authentication);
 
-       return new AuthentificationResponse(loginRequest.getUsername(),token);
+        return new AuthentificationResponse(loginRequest.getUsername(), token);
     }
 }

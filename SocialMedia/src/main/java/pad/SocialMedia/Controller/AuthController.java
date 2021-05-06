@@ -9,6 +9,7 @@ import pad.SocialMedia.dto.AuthentificationResponse;
 import pad.SocialMedia.dto.LoginRequest;
 import pad.SocialMedia.dto.RegisterRequest;
 
+@CrossOrigin()
 @RestController
 @RequestMapping("/auth")
 @AllArgsConstructor
@@ -24,15 +25,14 @@ public class AuthController {
     }
 
     @GetMapping("/accountVerification/{token}")
-    public ResponseEntity<String> verifyAccount (@PathVariable String token)
-    {
+    public ResponseEntity<String> verifyAccount(@PathVariable String token) {
         authService.verifyAccount(token);
         return new ResponseEntity<>("Account Activated!", HttpStatus.OK);
     }
 
     @PostMapping("/login")
-    public AuthentificationResponse login(@RequestBody LoginRequest loginRequest){
-       return authService.login(loginRequest);
+    public AuthentificationResponse login(@RequestBody LoginRequest loginRequest) {
+        return authService.login(loginRequest);
     }
 
 }
