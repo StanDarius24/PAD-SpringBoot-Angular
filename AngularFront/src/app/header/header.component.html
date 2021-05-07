@@ -1,12 +1,14 @@
 <header>
-  <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
+  <nav class="navbar navbar-expand-sm bg-dark navbar-dark sticky-top">
     <div class="flex-grow-1">
+
       <a aria-label="Home" class="logo" routerLink="/">
-                <span class="social-text">
-                    SocialMedia
-                </span>
+        <div>
+          <img src="assets/img/dawd.png" style="height: 40px">
+        </div>
       </a>
     </div>
+
     <div class="flex-grow-1 float-right">
       <div *ngIf="isLoggedIn" ngbDropdown class="float-right">
         <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
@@ -25,3 +27,4 @@
     </div>
   </nav>
 </header>
+

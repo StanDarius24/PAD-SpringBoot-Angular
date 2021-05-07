@@ -2,70 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="36d69301-7637-46c4-89cc-7503c06feb23" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/ChatServer/src/main/java/com/example/chatserver/config/WebSocketConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ChatServer/src/main/java/com/example/chatserver/controller/GreetingController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ChatServer/src/main/java/com/example/chatserver/model/Greeting.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ChatServer/src/main/java/com/example/chatserver/model/HelloMessage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SocialMedia/src/main/java/pad/SocialMedia/Security/CorsConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.name" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/PAD2.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/jarRepositories.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SocialMedia/mvnw" beforeDir="false" afterPath="$PROJECT_DIR$/SocialMedia/mvnw" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SocialMedia/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/SocialMedia/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SocialMedia/src/main/java/pad/SocialMedia/Controller/AuthController.java" beforeDir="false" afterPath="$PROJECT_DIR$/SocialMedia/src/main/java/pad/SocialMedia/Controller/AuthController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SocialMedia/src/main/java/pad/SocialMedia/Controller/SocialMediaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/SocialMedia/src/main/java/pad/SocialMedia/Controller/SocialMediaController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SocialMedia/src/main/java/pad/SocialMedia/Exceptions/MailSenderException.java" beforeDir="false" afterPath="$PROJECT_DIR$/SocialMedia/src/main/java/pad/SocialMedia/Exceptions/MailSenderException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SocialMedia/src/main/java/pad/SocialMedia/Exceptions/SocialMediaException.java" beforeDir="false" afterPath="$PROJECT_DIR$/SocialMedia/src/main/java/pad/SocialMedia/Exceptions/SocialMediaException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SocialMedia/src/main/java/pad/SocialMedia/Exceptions/TokenException.java" beforeDir="false" afterPath="$PROJECT_DIR$/SocialMedia/src/main/java/pad/SocialMedia/Exceptions/TokenException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SocialMedia/src/main/java/pad/SocialMedia/Mapper/MapperSubpage.java" beforeDir="false" afterPath="$PROJECT_DIR$/SocialMedia/src/main/java/pad/SocialMedia/Mapper/MapperSubpage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SocialMedia/src/main/java/pad/SocialMedia/Mapper/SubpageMapper.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SocialMedia/src/main/java/pad/SocialMedia/Model/NotificationEmail.java" beforeDir="false" afterPath="$PROJECT_DIR$/SocialMedia/src/main/java/pad/SocialMedia/Model/NotificationEmail.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SocialMedia/src/main/java/pad/SocialMedia/Model/Post.java" beforeDir="false" afterPath="$PROJECT_DIR$/SocialMedia/src/main/java/pad/SocialMedia/Model/Post.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SocialMedia/src/main/java/pad/SocialMedia/Model/SubPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/SocialMedia/src/main/java/pad/SocialMedia/Model/SubPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SocialMedia/src/main/java/pad/SocialMedia/Model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/SocialMedia/src/main/java/pad/SocialMedia/Model/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SocialMedia/src/main/java/pad/SocialMedia/Model/VerificationToken.java" beforeDir="false" afterPath="$PROJECT_DIR$/SocialMedia/src/main/java/pad/SocialMedia/Model/VerificationToken.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SocialMedia/src/main/java/pad/SocialMedia/Repository/PostRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/SocialMedia/src/main/java/pad/SocialMedia/Repository/PostRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SocialMedia/src/main/java/pad/SocialMedia/Repository/SubPageRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/SocialMedia/src/main/java/pad/SocialMedia/Repository/SubPageRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SocialMedia/src/main/java/pad/SocialMedia/Repository/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/SocialMedia/src/main/java/pad/SocialMedia/Repository/UserRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SocialMedia/src/main/java/pad/SocialMedia/Repository/VerificationTokenRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/SocialMedia/src/main/java/pad/SocialMedia/Repository/VerificationTokenRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SocialMedia/src/main/java/pad/SocialMedia/Security/JWTAuthFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/SocialMedia/src/main/java/pad/SocialMedia/Security/JWTAuthFilter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SocialMedia/src/main/java/pad/SocialMedia/Security/JWTProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/SocialMedia/src/main/java/pad/SocialMedia/Security/JWTProvider.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SocialMedia/src/main/java/pad/SocialMedia/Security/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/SocialMedia/src/main/java/pad/SocialMedia/Security/SecurityConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SocialMedia/src/main/java/pad/SocialMedia/Service/AuthService.java" beforeDir="false" afterPath="$PROJECT_DIR$/SocialMedia/src/main/java/pad/SocialMedia/Service/AuthService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SocialMedia/src/main/java/pad/SocialMedia/Service/MailContentBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/SocialMedia/src/main/java/pad/SocialMedia/Service/MailContentBuilder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SocialMedia/src/main/java/pad/SocialMedia/Service/MailServices.java" beforeDir="false" afterPath="$PROJECT_DIR$/SocialMedia/src/main/java/pad/SocialMedia/Service/MailServices.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SocialMedia/src/main/java/pad/SocialMedia/Service/SocialMediaService.java" beforeDir="false" afterPath="$PROJECT_DIR$/SocialMedia/src/main/java/pad/SocialMedia/Service/SocialMediaService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SocialMedia/src/main/java/pad/SocialMedia/Service/UserDetailsServiceImplementation.java" beforeDir="false" afterPath="$PROJECT_DIR$/SocialMedia/src/main/java/pad/SocialMedia/Service/UserDetailsServiceImplementation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SocialMedia/src/main/java/pad/SocialMedia/SocialMediaApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/SocialMedia/src/main/java/pad/SocialMedia/SocialMediaApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SocialMedia/src/main/java/pad/SocialMedia/dto/AuthentificationResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/SocialMedia/src/main/java/pad/SocialMedia/dto/AuthentificationResponse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SocialMedia/src/main/java/pad/SocialMedia/dto/LoginRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/SocialMedia/src/main/java/pad/SocialMedia/dto/LoginRequest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SocialMedia/src/main/java/pad/SocialMedia/dto/RegisterRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/SocialMedia/src/main/java/pad/SocialMedia/dto/RegisterRequest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SocialMedia/src/main/java/pad/SocialMedia/dto/SocialMediaDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/SocialMedia/src/main/java/pad/SocialMedia/dto/SocialMediaDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SocialMedia/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/SocialMedia/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/public/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/App.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/App.test.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/App.test.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/home.component.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/home.component.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/login.component.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/login.component.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/nav.component.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/nav.component.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/register.component.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/register.component.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/index.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/reportWebVitals.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/reportWebVitals.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/setupTests.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/setupTests.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -85,8 +22,21 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/SocialMedia" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Tema2" />
     <property name="settings.editor.selected.configurable" value="MTHome" />
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -98,6 +48,7 @@
       <updated>1618762830777</updated>
       <workItem from="1618762832030" duration="40000" />
       <workItem from="1619816871010" duration="15000" />
+      <workItem from="1620332852719" duration="985000" />
     </task>
     <servers />
   </component>

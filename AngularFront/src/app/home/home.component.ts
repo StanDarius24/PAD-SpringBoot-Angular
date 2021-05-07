@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Router} from '@angular/router';
+import {PostService} from '../services/post.services';
+import {Postmodel} from '../models/postmodel';
 
 
 @Component({
@@ -9,6 +11,7 @@ import {Router} from '@angular/router';
 })
 export class HomeComponent implements OnInit {
 
+  posts: Array<Postmodel> = [] ;
 
   constructor(private router: Router) {
   }
@@ -18,6 +21,11 @@ export class HomeComponent implements OnInit {
     this.router.navigate(['chat']).then();
   }
   ngOnInit(): void {
+  }
+
+  gotoprofil():void
+  {
+    this.router.navigate(['profile']).then();
   }
 
 }

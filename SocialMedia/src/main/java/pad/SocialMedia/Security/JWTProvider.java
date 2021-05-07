@@ -4,6 +4,7 @@ package pad.SocialMedia.Security;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.stereotype.Service;
@@ -17,6 +18,7 @@ import java.security.*;
 import java.security.cert.CertificateException;
 
 import java.time.Instant;
+import java.util.Date;
 
 
 import static io.jsonwebtoken.Jwts.parserBuilder;
@@ -26,7 +28,8 @@ import static java.util.Date.from;
 public class JWTProvider {
 
     private KeyStore keyStore;
-
+    @Value("${jwt.expiration.time}")
+    private Long jwtExpirationInMillis;
 
     @PostConstruct
     public void init() {
@@ -41,15 +44,24 @@ public class JWTProvider {
     }
 
 
+
     public String generateToken(Authentication authentication) {
         User principal = (User) authentication.getPrincipal();
         return Jwts.builder()
                 .setSubject(principal.getUsername())
                 .setIssuedAt(from(Instant.now()))
                 .signWith(getPrivateKey())
+                .setExpiration(Date.from (Instant.now().plusMillis(jwtExpirationInMillis)))
                 .compact();
     }
-
+    public String generateTokenWithUserName(String username) {
+        return Jwts.builder()
+                .setSubject(username)
+                .setIssuedAt(from(Instant.now()))
+                .signWith(getPrivateKey())
+                .setExpiration(Date.from(Instant.now().plusMillis(jwtExpirationInMillis)))
+                .compact();
+    }
 
     private PrivateKey getPrivateKey() {
         try {
@@ -60,7 +72,7 @@ public class JWTProvider {
     }
 
     public boolean validateToken(String jwt) {
-        parserBuilder().setSigningKey(getPublickey()).build();
+        parserBuilder().setSigningKey(getPublickey()).build().parseClaimsJws(jwt);;
         return true;
     }
 
@@ -82,6 +94,8 @@ public class JWTProvider {
 
         return claims.getSubject();
     }
-
+    public Long getJwtExpirationInMillis() {
+        return jwtExpirationInMillis;
+    }
 
 }

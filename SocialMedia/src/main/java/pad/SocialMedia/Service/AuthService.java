@@ -16,6 +16,7 @@ import pad.SocialMedia.Repository.VerificationTokenRepository;
 import pad.SocialMedia.Security.JWTProvider;
 import pad.SocialMedia.dto.AuthentificationResponse;
 import pad.SocialMedia.dto.LoginRequest;
+import pad.SocialMedia.dto.RefreshTokenRequest;
 import pad.SocialMedia.dto.RegisterRequest;
 
 import javax.transaction.Transactional;
@@ -34,7 +35,7 @@ public class AuthService {
     private final MailServices mailService;
     private final AuthenticationManager authenticationManager;
     private final JWTProvider jwtProvider;
-
+    private final RefreshTokenService refreshTokenService;
     @Transactional
     public void signup(RegisterRequest registerRequest) {
         User user = new User();
@@ -61,7 +62,7 @@ public class AuthService {
 
     public void verifyAccount(String token) {
         Optional<VerificationToken> vertkn = verificationTokenRepository.findByToken(token); // Returneaza Optional o smecherie
-        // sa fentam Null-ul (Exemplu Pdss Burger xD)
+        // sa fentam Null-ul (Exemp lu Pdss Burger xD)
 
         fetchUser(vertkn.orElseThrow(() -> new TokenException("Invalid token")));
     }
@@ -74,12 +75,30 @@ public class AuthService {
 
     }
 
+    public AuthentificationResponse refreshToken(RefreshTokenRequest refreshTokenRequest) {
+        refreshTokenService.validateRefreshToken(refreshTokenRequest.getRefreshToken());
+        String token = jwtProvider.generateTokenWithUserName(refreshTokenRequest.getUsername());
+        return AuthentificationResponse.builder()
+                .authenticationToken(token)
+                .refreshToken(refreshTokenRequest.getRefreshToken())
+                .expiresAt(Instant.now().plusMillis(jwtProvider.getJwtExpirationInMillis()))
+                .username(refreshTokenRequest.getUsername())
+                .build();
+    }
+
+
     public AuthentificationResponse login(LoginRequest loginRequest) {
         Authentication authentication = authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(loginRequest.getUsername(),
                 loginRequest.getPassword()));
         SecurityContextHolder.getContext().setAuthentication(authentication);
         String token = jwtProvider.generateToken(authentication);
 
-        return new AuthentificationResponse(loginRequest.getUsername(), token);
+        return AuthentificationResponse.builder()
+                .authenticationToken(token)
+                .refreshToken(refreshTokenService.generateRefreshToken().getToken())
+                .expiresAt(Instant.now().plusMillis(jwtProvider.getJwtExpirationInMillis()))
+                .username(loginRequest.getUsername())
+                .build();
+
     }
 }
