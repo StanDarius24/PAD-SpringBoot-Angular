@@ -15,29 +15,29 @@ import java.util.List;
 @RequestMapping("/SocialMedia")
 @AllArgsConstructor
 @Slf4j
+@CrossOrigin()
 public class SocialMediaController {
 
     private final SocialMediaService socialMediaService;
 
     @PostMapping
-    public ResponseEntity<SocialMediaDto> createSocialMedia(@RequestBody SocialMediaDto socialMediaDto)
-    {
+    public ResponseEntity<SocialMediaDto> createSocialMedia(@RequestBody SocialMediaDto socialMediaDto) {
         return
-        ResponseEntity.status(HttpStatus.CREATED).body(
-                socialMediaService.save(socialMediaDto));
+                ResponseEntity.status(HttpStatus.CREATED).body(
+                        socialMediaService.save(socialMediaDto));
     }
 
     @GetMapping
-    public ResponseEntity<List<SocialMediaDto>> getAllSocialMedia()
-    { return
-        ResponseEntity
-                .status(HttpStatus.OK)
-                .body(socialMediaService
-                        .getAll());
+    public ResponseEntity<List<SocialMediaDto>> getAllSocialMedia() {
+        return
+                ResponseEntity
+                        .status(HttpStatus.OK)
+                        .body(socialMediaService
+                                .getAll());
     }
+
     @GetMapping("/{id}")
-    public ResponseEntity<SocialMediaDto> getSocialMedia(@PathVariable Long id)
-    {
+    public ResponseEntity<SocialMediaDto> getSocialMedia(@PathVariable Long id) {
         return ResponseEntity
                 .status(HttpStatus.OK)
                 .body(socialMediaService.getSocialMediaDto(id));

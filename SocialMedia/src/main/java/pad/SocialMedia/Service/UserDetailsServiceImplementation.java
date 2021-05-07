@@ -31,7 +31,7 @@ public class UserDetailsServiceImplementation implements UserDetailsService {
         // mai e o clasa User implementata in framework, nu prea am fost inspirat cu numele
         // si nu-mi vede clasa implementata de mine decat asa, un meci mai prost :(
         return new org.springframework.security.core.userdetails.User(user.getUsername(),
-                user.getPassword(), user.isEnabled(), true,true, true, getAuthorities("USER"));
+                user.getPassword(), user.isEnabled(), true, true, true, getAuthorities("USER"));
     }
 
     private Collection<? extends GrantedAuthority> getAuthorities(String role) {
