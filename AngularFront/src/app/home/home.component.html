@@ -1,7 +1,25 @@
-<div>Hello</div>
-<div>Buna</div>
+
 <button class="btn-danger" (click)="gotochat()">Go To Chat</button>
 
 
 <button class="btn-danger" (click)="gotoprofil()">Go To Profil</button>
 
+<button class="btn-danger" (click)="print()">print token</button>
+<div>{{token}}</div>
+<div class="reddit-body">
+  <div class="container">
+    <div class="row">
+      <hr />
+      <div class="col-md-9">
+        <div *ngFor="let i of posts$ ">
+          <div>{{i.name}}</div>
+          <div>{{i.number}}</div>
+          <div>{{i.description}}</div>
+          <div>{{i.id}}</div>
+        </div>
+      </div>
+      <div class="col-md-3">
+      </div>
+    </div>
+  </div>
+</div>
