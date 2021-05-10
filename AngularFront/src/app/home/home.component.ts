@@ -37,4 +37,9 @@ export class HomeComponent implements OnInit {
     this.token=  this.auth.getJwtToken();
   }
 
+  postss():void
+  {
+    this.router.navigate(['posts']).then();
+  }
+
 }

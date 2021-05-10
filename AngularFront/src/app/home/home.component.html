@@ -6,11 +6,14 @@
 
 <button class="btn-danger" (click)="print()">print token</button>
 <div>{{token}}</div>
-<div class="reddit-body">
-  <div class="container">
+
+<button class="btn-danger" (click)="postss()">Go to Posts</button>
+
+<div>
+  <div class="container  dw">
     <div class="row">
       <hr />
-      <div class="col-md-9">
+      <div class="row align-items-start">
         <div *ngFor="let i of posts$ ">
           <div>{{i.name}}</div>
           <div>{{i.number}}</div>

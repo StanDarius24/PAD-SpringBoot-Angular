@@ -6,12 +6,14 @@ import {ChatComponent} from './chat/chat.component';
 import {ProfileComponent} from './profile/profile.component';
 import { SingupComponent } from './auth/singup/singup.component';
 import {AuthGuard} from './auth/auth.guard';
+import {PostsComponent} from './posts/posts.component';
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'sign-up', component: SingupComponent },
   { path: 'login', component: LoginComponent },
   { path: 'chat', component: ChatComponent},
-  { path: 'profile', component: ProfileComponent }
+  { path: 'profile', component: ProfileComponent },
+  { path: 'posts',component: PostsComponent}
 ];
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

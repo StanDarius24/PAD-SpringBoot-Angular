@@ -20,6 +20,7 @@ import { LoginComponent } from './auth/login/login.component';
 
 import { HeaderComponent } from './header/header.component';
 import { SingupComponent } from './auth/singup/singup.component';
+import { PostsComponent } from './posts/posts.component';
 // aici tre sa instalati pachetele pe care le am folosit. O metoda simpla
 // e sa cautati exact pe google ce e dupa from
 // de exemplu pentru @fortawesome/angular-fontawesome
@@ -37,6 +38,7 @@ import { SingupComponent } from './auth/singup/singup.component';
     LoginComponent,
     HeaderComponent,
     SingupComponent,
+    PostsComponent,
   ],
   imports: [
     BrowserModule,
