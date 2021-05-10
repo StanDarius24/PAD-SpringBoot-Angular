@@ -95,3 +95,14 @@ header{
   max-height: 24px;
   max-width: 24px;
 }
+
+#rightchild{
+  top: 15px;
+  margin-left: auto;
+  margin-right: auto;
+  width:160px;
+  right:0;
+  bottom: 15 px;
+  background: #000b2d;
+  position:absolute;
+}

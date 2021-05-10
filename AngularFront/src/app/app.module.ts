@@ -10,7 +10,7 @@ import { HomeComponent } from './home/home.component';
 import { ProfileComponent } from './profile/profile.component';
 import {HttpClientModule} from '@angular/common/http';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import { ReactiveFormsModule } from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { NgxWebstorageModule } from 'ngx-webstorage';
 import { ToastrModule } from 'ngx-toastr';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
@@ -20,6 +20,14 @@ import { LoginComponent } from './auth/login/login.component';
 
 import { HeaderComponent } from './header/header.component';
 import { SingupComponent } from './auth/singup/singup.component';
+import { PostsComponent } from './posts/posts.component';
+import { StreamComponent } from './chat/stream/stream.component';
+import { UsersComponent } from './chat/users/users.component';
+import {Appdata} from './shared/appdata';
+import {WebSocketService} from './shared/Websocket';
+import {Handler} from './shared/handler';
+import {Chatservice} from './shared/chatservice';
+import { LoginchatComponent } from './chat/loginchat/loginchat.component';
 // aici tre sa instalati pachetele pe care le am folosit. O metoda simpla
 // e sa cautati exact pe google ce e dupa from
 // de exemplu pentru @fortawesome/angular-fontawesome
@@ -37,6 +45,10 @@ import { SingupComponent } from './auth/singup/singup.component';
     LoginComponent,
     HeaderComponent,
     SingupComponent,
+    PostsComponent,
+    StreamComponent,
+    UsersComponent,
+    LoginchatComponent,
   ],
   imports: [
     BrowserModule,
@@ -47,10 +59,11 @@ import { SingupComponent } from './auth/singup/singup.component';
     BrowserAnimationsModule,
     ToastrModule.forRoot(),
     FontAwesomeModule,
+    FormsModule,
     EditorModule,
     NgbModule
   ],
-  providers: [],
+  providers: [Appdata,WebSocketService,Handler,Chatservice],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

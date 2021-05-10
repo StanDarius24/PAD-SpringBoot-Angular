@@ -11,12 +11,13 @@ import { LoginResponse } from './auth/login/login-response.payload';
 export class TokenInterceptor implements HttpInterceptor {
 
   isTokenRefreshing = false;
-  refreshTokenSubject: BehaviorSubject<any> = new BehaviorSubject(null);
+  refreshTokenSubject: BehaviorSubject<any> = new BehaviorSubject<any>(null);
 
-  constructor(public authService: AuthService) { }
+  constructor(public authService: AuthService) {
 
-  intercept(req: HttpRequest<any>, next: HttpHandler):
-    Observable<HttpEvent<any>> {
+  }
+
+  intercept(req:HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
 
     if (req.url.indexOf('refresh') !== -1 || req.url.indexOf('login') !== -1) {
       return next.handle(req);
@@ -37,8 +38,14 @@ export class TokenInterceptor implements HttpInterceptor {
 
   }
 
-  private handleAuthErrors(req: HttpRequest<any>, next: HttpHandler)
-    : Observable<HttpEvent<any>> {
+
+   addToken(req: HttpRequest<any>, jwtToken: any) {
+    return req.clone({
+      headers: req.headers.set('Authorization', 'Bearer ' + jwtToken)
+    });
+  }
+
+  private handleAuthErrors(req: HttpRequest<any>, next: HttpHandler) {
     if (!this.isTokenRefreshing) {
       this.isTokenRefreshing = true;
       this.refreshTokenSubject.next(null);
@@ -63,12 +70,4 @@ export class TokenInterceptor implements HttpInterceptor {
       );
     }
   }
-
-  addToken(req: HttpRequest<any>, jwtToken: any) {
-    return req.clone({
-      headers: req.headers.set('Authorization',
-        'Bearer ' + jwtToken)
-    });
-  }
-
 }

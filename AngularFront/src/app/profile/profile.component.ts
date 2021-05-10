@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
-import {PostService} from '../services/post.services';
+import {PostService} from '../shared/post.service';
 import {Postmodel} from '../models/postmodel';
 import {throwError} from 'rxjs';
 import {FormControl, FormGroup, Validators} from '@angular/forms';

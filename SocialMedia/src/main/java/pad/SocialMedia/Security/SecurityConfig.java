@@ -48,6 +48,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .permitAll()
                 .antMatchers(HttpMethod.GET, "/SocialMedia/")
                 .permitAll()
+                .antMatchers(HttpMethod.POST, "/SocialMedia/")
+                .permitAll()
                 .anyRequest()
                 .authenticated();
 
