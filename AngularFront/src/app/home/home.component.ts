@@ -11,7 +11,7 @@ import {AuthService} from '../auth/shared/auth.service';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-
+  namex : string;
   posts$: Array<Postmodel> = [] ;
   token : string;
   constructor(private router: Router,private postService: PostService, private auth :AuthService) {
@@ -23,7 +23,7 @@ export class HomeComponent implements OnInit {
 
   gotochat():void
   {
-    this.router.navigate(['chat']).then();
+    this.router.navigate(['loginx']).then();
   }
   ngOnInit(): void {
   }
@@ -40,6 +40,11 @@ export class HomeComponent implements OnInit {
   postss():void
   {
     this.router.navigate(['posts']).then();
+  }
+
+  name():void
+  {
+    this.namex = this.auth.getUserName();
   }
 
 }
