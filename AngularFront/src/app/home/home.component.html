@@ -1,30 +1,26 @@
+<body class="body-profile">
+<div class="container container-custom-1">
+  <div class="row buttons-all">
+    <button class="btn1" (click)="gotoprofil()"> <a class="a-over"> Profile </a> </button>
+    <button class="btn1" (click)="gotochat()"> <a  class="a-over"> Chat </a> </button>
+    <button class="btn1" (click)="postss()"> <a  class="a-over"> Add post </a> </button>
+  </div>
 
-<button class="btn-danger" (click)="gotochat()">Go To Chat</button>
-
-
-<button class="btn-danger" (click)="gotoprofil()">Go To Profil</button>
-
-<button class="btn-danger" (click)="print()">print token</button>
-<div>{{token}}</div>
-
-<button class="btn-danger" (click)="postss()">Go to Posts</button>
-
-<button class="btn-danger" (click)="name()">Name</button>
-<div>{{namex}}</div>
-<div>
-  <div class="container  dw">
-    <div class="row">
-      <hr />
-      <div class="row align-items-start">
-        <div *ngFor="let i of posts$ ">
-          <div>{{i.name}}</div>
-          <div>{{i.number}}</div>
-          <div>{{i.description}}</div>
-          <div>{{i.id}}</div>
-        </div>
-      </div>
-      <div class="col-md-3">
-      </div>
+  <div class="row">
+    <div class="col-12 text-center">
+      <h2 class="custom-main-title"> Newsfeed </h2>
     </div>
   </div>
+  <div *ngFor="let i of posts$ ">
+  <div class="row post">
+    <h3> {{i.name}} </h3>
+    <h5 class="post-border">
+      {{i.description}}
+    </h5>
+    <p class="post-stamp">{{i.data}} </p>
+  </div>
+
+  </div>
+
 </div>
+</body>

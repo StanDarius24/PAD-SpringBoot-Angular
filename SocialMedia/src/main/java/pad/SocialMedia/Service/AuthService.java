@@ -28,7 +28,6 @@ import java.util.UUID;
 @AllArgsConstructor
 public class AuthService {
 
-
     private final PasswordEncoder passwordEncoder;
     private final VerificationTokenRepository verificationTokenRepository;
     private final UserRepository userRepository;

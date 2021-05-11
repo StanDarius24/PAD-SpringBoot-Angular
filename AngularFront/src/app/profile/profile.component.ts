@@ -4,6 +4,7 @@ import {PostService} from '../shared/post.service';
 import {Postmodel} from '../models/postmodel';
 import {throwError} from 'rxjs';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
+import {AuthService} from '../auth/shared/auth.service';
 
 @Component({
   selector: 'app-profile',
@@ -20,8 +21,9 @@ export class ProfileComponent implements OnInit {
    */
   commentForm: FormGroup;
   posts: Array<Postmodel> = [] ;
-
-  constructor(private router: Router,private postService: PostService) {
+  tatalor : string;
+  constructor(private router: Router,private postService: PostService, private auths: AuthService) {
+    this.tatalor = auths.getUserName();
     this.commentForm = new FormGroup({
       text: new FormControl('', Validators.required)
     });
