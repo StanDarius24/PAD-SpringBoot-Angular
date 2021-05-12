@@ -44,7 +44,7 @@ public class SocialMediaService {
 
     public SocialMediaDto getSocialMediaDto(Long id) {
         SubPage subpage = subPageRepository.findById(id)
-                .orElseThrow(() -> new SocialMediaException("No subreddit found with ID - " + id));
+                .orElseThrow(() -> new SocialMediaException("No subpage found with ID - " + id));
         return subpageMapper.mapSocialMediaDto(subpage);
     }
 

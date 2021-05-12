@@ -22,4 +22,9 @@ export class PostService {
     console.log(postPayload);
     return this.http.post('http://localhost:8080/SocialMedia/', postPayload);
   }
+
+  getemail(mail:string): Observable<any> {
+    console.log('http://localhost:8080/auth/' + mail);
+    return this.http.get('http://localhost:8080/auth/' + mail);
+  }
 }

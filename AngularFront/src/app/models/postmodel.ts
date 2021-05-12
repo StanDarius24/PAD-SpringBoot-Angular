@@ -4,4 +4,5 @@ export class Postmodel
   number: number;
   name: string;
   description: string;
+  date:string;
 }

@@ -12,7 +12,7 @@ import {PostCreateModel} from '../models/PostCreateModel';
   styleUrls: ['./posts.component.css']
 })
 export class PostsComponent implements OnInit {
-
+  date: Date;
   createForm: FormGroup;
   Model: PostCreateModel;
   title = new FormControl('');
@@ -25,7 +25,8 @@ export class PostsComponent implements OnInit {
     });
     this.Model = {
       name: '',
-      description: ''
+      description: '',
+      date: '',
     }
   }
 
@@ -41,7 +42,8 @@ export class PostsComponent implements OnInit {
       .value;
     this.Model.description = this.createForm.get('description')
       .value;
-
+      this.date = new Date();
+      this.Model.date = this.date.toString().substr(0,this.date.toString().indexOf("GMT"));
     console.log(this.Model);
     this.subredditService.createPost(this.Model).subscribe(data => {
       this.router.navigateByUrl('/profile');

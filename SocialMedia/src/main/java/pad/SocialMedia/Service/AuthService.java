@@ -74,6 +74,11 @@ public class AuthService {
 
     }
 
+    public String getemail(String name) {
+        User user = userRepository.findByUsername(name).orElseThrow(() -> new TokenException("User inexistent"));
+        return user.getEmail();
+    }
+
     public AuthentificationResponse refreshToken(RefreshTokenRequest refreshTokenRequest) {
         refreshTokenService.validateRefreshToken(refreshTokenRequest.getRefreshToken());
         String token = jwtProvider.generateTokenWithUserName(refreshTokenRequest.getUsername());

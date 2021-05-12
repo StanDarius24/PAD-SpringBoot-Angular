@@ -1,6 +1,5 @@
-header{
-  border-radius: 1px solid;
-}
+
+
 .social-icon-svg{
   height: 50px;
   padding: 8px 8px 8px 0;
@@ -102,7 +101,7 @@ header{
   margin-right: auto;
   width:160px;
   right:0;
-  bottom: 1 px;
+  bottom: 1px;
   background: #000b2d;
   position:absolute;
 }
