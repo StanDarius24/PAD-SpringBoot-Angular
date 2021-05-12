@@ -1,23 +1,25 @@
 <div class="container">
   <div class="row">
-    <div class="create-subreddit-container">
+    <div class="container container-add-post" style="background-color: whitesmoke;">
+      <h1> What's on your mind? </h1>
+      <div class="create-subreddit-container">
       <form class="post-form" [formGroup]="createForm" (ngSubmit)="create()">
         <div class="form-group">
-          <div class="create-subreddit-heading">Create Post</div>
+
           <hr />
-          <input type="text" [formControlName]="'title'" class="form-control" style="margin-top: 5px"
-                 placeholder="Title">
-          <textarea type="text" [formControlName]="'description'" style="width: 100%; margin-top: 5px"
-                    placeholder="Description"></textarea>
+          <input  type="text" [formControlName]="'title'" class="form-control" style="background-color: black; border-radius: 0.7em; color: greenyellow; font-size:1.2em;"
+                 placeholder="Title$">
+          <textarea class="form-control form-textarea" type="text" [formControlName]="'description'" style="background-color: black; border-radius: 0.7em; color: greenyellow; font-size:1.2em;"
+                    placeholder="Description$"></textarea>
           <div>
             <div style="margin-top: 5px" class="float-right">
-              <button (click)="discard()" class="btnDiscard">Discard</button>
-              <button class="btnCreateSubreddit">Create</button>
+              <button (click)="discard()" class="btn-post2" >Discard</button>
+              <button class="btn-post2"  >Create</button>
             </div>
           </div>
         </div>
       </form>
     </div>
   </div>
+  </div>
 </div>
-

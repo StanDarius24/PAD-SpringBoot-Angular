@@ -29,7 +29,6 @@ public class SocialMediaService {
         socialMediaDto.setId(save.getId());
 
         return socialMediaDto;
-
     }
 
 

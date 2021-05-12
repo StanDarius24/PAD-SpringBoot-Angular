@@ -28,7 +28,6 @@ import java.util.UUID;
 @AllArgsConstructor
 public class AuthService {
 
-
     private final PasswordEncoder passwordEncoder;
     private final VerificationTokenRepository verificationTokenRepository;
     private final UserRepository userRepository;
@@ -86,7 +85,6 @@ public class AuthService {
                 .build();
     }
 
-
     public AuthentificationResponse login(LoginRequest loginRequest) {
         Authentication authentication = authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(loginRequest.getUsername(),
                 loginRequest.getPassword()));
@@ -99,6 +97,5 @@ public class AuthService {
                 .expiresAt(Instant.now().plusMillis(jwtProvider.getJwtExpirationInMillis()))
                 .username(loginRequest.getUsername())
                 .build();
-
     }
 }
