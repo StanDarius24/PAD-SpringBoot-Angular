@@ -1,8 +1,10 @@
 .body-profile {
+  display: flex;
   font-family: 'Courier New', Courier, monospace;
   background: linear-gradient(to right, #615664, grey);
   /* background: grey; */
   font-size: 1em;
+  height: 100%;
 }
 
 .colorat{
@@ -15,6 +17,7 @@
   background-color: white;
   margin: auto;
   margin-top: 40px;
+  margin-bottom: 40px;
 }
 
 .container-custom-1 {

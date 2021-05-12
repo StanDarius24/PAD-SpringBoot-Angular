@@ -1,26 +1,26 @@
 <body class="body-profile">
-<div class="container container-custom-1">
-  <div class="row buttons-all">
-    <button class="btn1" (click)="gotoprofil()"> <a class="a-over"> Profile </a> </button>
-    <button class="btn1" (click)="gotochat()"> <a  class="a-over"> Chat </a> </button>
-    <button class="btn1" (click)="postss()"> <a  class="a-over"> Add post </a> </button>
-  </div>
-
-  <div class="row">
-    <div class="col-12 text-center">
-      <h2 class="custom-main-title"> Newsfeed </h2>
+  <div class="container container-custom-1">
+    <div class="row buttons-all">
+      <button class="btn1" (click)="gotoprofil()"> <a class="a-over"> Profile </a> </button>
+      <button class="btn1" (click)="gotochat()"> <a  class="a-over"> Chat </a> </button>
+      <button class="btn1" (click)="postss()"> <a  class="a-over"> Add post </a> </button>
     </div>
-  </div>
-  <div *ngFor="let i of posts$ ">
-  <div class="row post">
-    <h3> {{i.name}} </h3>
-    <h5 class="post-border">
-      {{i.description}}
-    </h5>
-    <p class="post-stamp">{{i.data}} </p>
-  </div>
+
+    <div class="row">
+      <div class="col-12 text-center">
+        <h2 class="custom-main-title"> Newsfeed </h2>
+      </div>
+    </div>
+    <div *ngFor="let i of posts$ ">
+    <div class="row post">
+      <h3> {{i.name}} </h3>
+      <h5 class="post-border">
+        {{i.description}}
+      </h5>
+  <!--     <p class="post-stamp">{{i.data}} </p>
+  -->  </div>
+
+    </div>
 
   </div>
-
-</div>
 </body>
