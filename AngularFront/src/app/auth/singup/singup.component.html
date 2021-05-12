@@ -6,6 +6,7 @@
         <div class="card-header" style="text-align: center">
           <h4>Register</h4>
         </div>
+        
         <div class="card-body">
           <form [formGroup]="signupForm" (ngSubmit)="signup()">
             <div class="form-group row">
@@ -20,7 +21,6 @@
               </div>
             </div>
 
-
             <div class="form-group row">
               <label class="col-md-4 col-form-label text-md-right">User Name</label>
               <div class="col-md-6">
@@ -28,7 +28,6 @@
                 <span *ngIf="!signupForm.get('username').valid && signupForm.get('username').touched">
                   Please provide a valid username!
                 </span>
-
               </div>
             </div>
 
@@ -41,17 +40,18 @@
                 <span *ngIf="!signupForm.get('password').valid && signupForm.get('password').touched">
                   Please provide a valid password!
                 </span>
-
               </div>
             </div>
 
 
             <span class="col-md-6 offset-md-4">
-                            <button type="submit" class="sign-up">
-                                Sign Up
-                            </button>
-                            <span style="padding-left: 15px">Existing user? <a routerLink="/login">Log In</a></span>
-                        </span>
+              <button type="submit" class="sign-up">
+                  Sign Up
+              </button>
+              <span style="padding-left: 15px">
+                Existing user? <a routerLink="/login">Log In</a>
+              </span>
+            </span>
           </form>
         </div>
       </div>

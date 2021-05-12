@@ -1,9 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import {Router} from '@angular/router';
-import {PostService} from '../shared/post.service';
-import {Postmodel} from '../models/postmodel';
-import {AuthService} from '../auth/shared/auth.service';
-
+import { Router } from '@angular/router';
+import { PostService } from '../shared/post.service';
+import { Postmodel } from '../models/postmodel';
+import { AuthService } from '../auth/shared/auth.service';
 
 @Component({
   selector: 'app-home',
@@ -46,5 +45,4 @@ export class HomeComponent implements OnInit {
   {
     this.namex = this.auth.getUserName();
   }
-
 }

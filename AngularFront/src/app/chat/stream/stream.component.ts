@@ -8,8 +8,8 @@ import {WebSocketService} from '../../shared/Websocket';
   templateUrl: './stream.component.html',
   styleUrls: ['./stream.component.css']
 })
-export class StreamComponent {
 
+export class StreamComponent {
   message: string = '';
   publishedMessage: Message[] = new Array();
   showTypingIndicator: boolean = false;
@@ -74,5 +74,4 @@ export class StreamComponent {
       this.showTypingIndicator = false;
     }
   }
-
 }

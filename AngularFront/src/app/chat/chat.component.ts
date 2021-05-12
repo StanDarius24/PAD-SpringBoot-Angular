@@ -6,20 +6,13 @@ import {Appdata} from '../shared/appdata';
   templateUrl: './chat.component.html',
   styleUrls: ['./chat.component.css']
 })
+
 export class ChatComponent implements OnInit {
-
-
-
   loggedInUser: String;
 
   constructor(private appDataService: Appdata) {
     this.loggedInUser = appDataService.userName;
   }
 
-
-
-  ngOnInit(): void {
-  }
-
-
+  ngOnInit(): void { }
 }

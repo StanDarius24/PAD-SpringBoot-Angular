@@ -2,7 +2,6 @@
   display: flex;
   font-family: 'Courier New', Courier, monospace;
   background: linear-gradient(to right, #615664, grey);
-  /* background: grey; */
   font-size: 1em;
 }
 
@@ -24,7 +23,6 @@
 
 .buttons-all {
   padding:20px;
-  /* border-bottom: solid 10px black; */
   font-size: 1.2em;
   opacity: 0.7;
 }
@@ -87,12 +85,6 @@
 .post-border{
   border-left: solid 3px lightgray;
   padding-left: 20px;
-  /* border-style: solid;
-  border-image: linear-gradient(to bottom, lightblue, lightcoral) 1;
-  border-image-width: 0 0 0 0.7%;
-  border-top: none;
-  border-bottom: none;
-  border-right: none; */
 }
 
 .post-stamp{
@@ -101,7 +93,6 @@
   border-radius: 20px;
   background-color: lightgoldenrodyellow;
   margin-top: 10px;
-  /* background: linear-gradient(to right, #DAA0DF , lightblue); */
 }
 
 .bl {
