@@ -10,6 +10,7 @@ import { Router } from '@angular/router';
   templateUrl: './singup.component.html',
   styleUrls: ['./singup.component.css']
 })
+
 export class SingupComponent implements OnInit {
   signupRequestPayload: SignupRequestPayload;
   signupForm: FormGroup;
@@ -43,6 +44,4 @@ export class SingupComponent implements OnInit {
       password: new FormControl('', Validators.required),
     });
   }
-
-
 }

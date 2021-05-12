@@ -1,10 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import {PostService} from '../shared/post.service';
-import {FormControl, FormGroup, Validators} from '@angular/forms';
-import {Postmodel} from '../models/postmodel';
-import {Router} from '@angular/router';
-import {throwError} from 'rxjs';
-import {PostCreateModel} from '../models/PostCreateModel';
+import { PostService } from '../shared/post.service';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import { throwError } from 'rxjs';
+import { PostCreateModel } from '../models/PostCreateModel';
 
 @Component({
   selector: 'app-posts',
@@ -51,5 +50,4 @@ export class PostsComponent implements OnInit {
       throwError(error);
     })
   }
-
 }

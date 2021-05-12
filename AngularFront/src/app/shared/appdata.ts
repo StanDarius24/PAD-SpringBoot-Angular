@@ -1,9 +1,7 @@
-import {Injectable}   from '@angular/core';
-import {LocalStorage} from 'ngx-webstorage';
-
+import { Injectable }   from '@angular/core';
+import { LocalStorage } from 'ngx-webstorage';
 @Injectable()
 export class Appdata {
-
   @LocalStorage()
   public userId: number;
 
@@ -14,5 +12,4 @@ export class Appdata {
     this.userId = null;
     this.userName = null;
   }
-
 }

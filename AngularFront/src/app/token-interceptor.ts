@@ -4,18 +4,14 @@ import { Observable, BehaviorSubject, throwError } from 'rxjs';
 import { AuthService } from './auth/shared/auth.service';
 import { catchError, switchMap, take, filter } from 'rxjs/operators';
 import { LoginResponse } from './auth/login/login-response.payload';
-
 @Injectable({
   providedIn: 'root'
 })
 export class TokenInterceptor implements HttpInterceptor {
-
   isTokenRefreshing = false;
   refreshTokenSubject: BehaviorSubject<any> = new BehaviorSubject<any>(null);
 
-  constructor(public authService: AuthService) {
-
-  }
+  constructor(public authService: AuthService) {}
 
   intercept(req:HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
 
@@ -35,9 +31,7 @@ export class TokenInterceptor implements HttpInterceptor {
       }));
     }
     return next.handle(req);
-
   }
-
 
    addToken(req: HttpRequest<any>, jwtToken: any) {
     return req.clone({

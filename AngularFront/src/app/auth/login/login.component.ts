@@ -11,8 +11,8 @@ import { throwError } from 'rxjs';
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
-export class LoginComponent implements OnInit {
 
+export class LoginComponent implements OnInit {
   loginForm: FormGroup;
   loginRequestPayload: LoginRequestPayload;
   registerSuccessMessage: string;
@@ -55,5 +55,4 @@ export class LoginComponent implements OnInit {
       throwError(error);
     });
   }
-
 }

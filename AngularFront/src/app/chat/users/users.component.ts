@@ -1,15 +1,16 @@
-import {Component, HostListener} from '@angular/core';
-import {User} from '../../models/user';
-import {Chatservice} from '../../shared/chatservice';
-import {Appdata} from '../../shared/appdata';
-import {WebSocketService} from '../../shared/Websocket';
-import {Message} from '../../models/message';
+import { Component, HostListener } from '@angular/core';
+import { User } from '../../models/user';
+import { Chatservice } from '../../shared/chatservice';
+import { Appdata } from '../../shared/appdata';
+import { WebSocketService } from '../../shared/Websocket';
+import { Message } from '../../models/message';
 
 @Component({
   selector: 'app-users',
   templateUrl: './users.component.html',
   styleUrls: ['./users.component.css']
 })
+
 export class UsersComponent  {
 
   users: User[] = new Array();
@@ -69,6 +70,4 @@ export class UsersComponent  {
     }
     this.websocket.send(JSON.stringify(message));
   }
-
-
 }

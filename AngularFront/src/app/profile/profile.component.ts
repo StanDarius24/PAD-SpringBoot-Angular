@@ -12,6 +12,7 @@ import {HttpErrorResponse} from '@angular/common/http';
   templateUrl: './profile.component.html',
   styleUrls: ['./profile.component.css']
 })
+
 export class ProfileComponent implements OnInit {
 
   /*

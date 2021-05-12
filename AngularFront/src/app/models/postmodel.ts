@@ -1,5 +1,4 @@
-export class Postmodel
-{
+export class Postmodel {
   id: number;
   number: number;
   name: string;

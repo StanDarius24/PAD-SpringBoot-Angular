@@ -1,16 +1,16 @@
 import { Component } from '@angular/core';
-import {Router} from '@angular/router';
-import {Chatservice} from '../../shared/chatservice';
-import {Appdata} from '../../shared/appdata';
-import {AuthService} from '../../auth/shared/auth.service';
+import { Router } from '@angular/router';
+import { Chatservice } from '../../shared/chatservice';
+import { Appdata } from '../../shared/appdata';
+import { AuthService } from '../../auth/shared/auth.service';
 
 @Component({
   selector: 'app-loginchat',
   templateUrl: './loginchat.component.html',
   styleUrls: ['./loginchat.component.css']
 })
-export class LoginchatComponent  {
 
+export class LoginchatComponent  {
   userName: string;
   showErrorMsg: boolean;
 
@@ -19,7 +19,6 @@ export class LoginchatComponent  {
               private appDataService: Appdata,
               private authservice:AuthService ) {
     this.userName = authservice.getUserName();
-
   }
 
   doLogin() {
@@ -31,5 +30,4 @@ export class LoginchatComponent  {
         this.router.navigate(['/chat']);
       });
   }
-
 }
