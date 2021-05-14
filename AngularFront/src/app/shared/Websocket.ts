@@ -1,10 +1,8 @@
-import {Injectable}   from '@angular/core';
+import { Injectable }   from '@angular/core';
 
 const WEBSOCKET_URL = 'ws://localhost:8185/websocket';
-
 @Injectable()
 export class WebSocketService {
-
   websocket: WebSocket;
 
   constructor() { }
@@ -13,5 +11,4 @@ export class WebSocketService {
     this.websocket = new WebSocket(WEBSOCKET_URL);
     return this.websocket;
   }
-
 }

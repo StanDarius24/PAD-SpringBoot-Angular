@@ -34,7 +34,7 @@ public class MailServices {
             System.out.println("Activation email send");
         } catch
         ( MailException e ) {
-            throw new MailSenderException("Exceprion occurred when sending email to " + notificationEmail.getRecipient(), e);
+            throw new MailSenderException("Exception occurred when sending email to " + notificationEmail.getRecipient(), e);
         }
     }
 }

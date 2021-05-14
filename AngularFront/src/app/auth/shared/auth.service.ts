@@ -10,8 +10,8 @@ import { map, tap } from 'rxjs/operators';
 @Injectable({
   providedIn: 'root'
 })
-export class AuthService {
 
+export class AuthService {
   @Output() loggedIn: EventEmitter<boolean> = new EventEmitter();
   @Output() username: EventEmitter<string> = new EventEmitter();
 
@@ -77,6 +77,7 @@ export class AuthService {
   getUserName() {
     return this.localStorage.retrieve('username');
   }
+
   getRefreshToken() {
     return this.localStorage.retrieve('refreshToken');
   }

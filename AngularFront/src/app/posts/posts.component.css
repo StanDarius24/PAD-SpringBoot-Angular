@@ -1,77 +1,277 @@
-.btnCreatePost,
-.btnCreateSubreddit {
-  margin-top: 5px;
+.body-profile {
+  font-family: 'Courier New', Courier, monospace;
+  background: linear-gradient(to right, #615664, grey);
+  font-size: 1em;
 }
 
-.post-form {
-  margin: 2px;
+.colorat{
+  background-color: #000b2d;
 }
 
-.comment-notification {
-  margin-top: 5px;
+.container {
+  text-align: center;
+  background-color: white;
+  margin: auto;
+  margin-top: 40px;
 }
 
-.create-post-container {
+.container-custom-1 {
+  border-radius: 25px;
+}
+
+.buttons-all {
+  padding:20px;
+  font-size: 1.2em;
+  opacity: 0.7;
+}
+
+.custom-main-title {
+  padding:20px;
+  margin-top:10px;
+  font-size: 3.5em;
+  font-family:'Courier New', Courier, monospace;
+  text-shadow: 16px 22px 11px rgba(202, 156, 199 ,0.8);
+}
+
+.user-data {
+  padding: 50px;
+  font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+.user-username {
+  font-size: 3em;
+  color: black;
+  transition: 0.5s;
+  margin-bottom: 30px;
+  border-radius: 20px;
+}
+
+.user-username:hover {
+  font-size: 3em;
+  color: #FA1446;
+  background-color: black;
+  transition: 0.5s;
+  opacity: 0.8;
+}
+
+.user-other {
+  font-size: 1.8em;
+  transition: 0.5s;
+  color: black;
+  margin-top: 15px;
+  border-radius: 20px;
+}
+
+.user-other:hover{
+  font-size: 1.8em;
+  transition: 0.5s;
+  color: #FA1446;
+  margin-top: 15px;
+  background-color: black;
+  opacity: 0.8;
+}
+
+.user-posts {
+  padding:30px;
+}
+
+.post {
+  padding: 20px;
+  margin: 10px;
+}
+
+.post-border{
+  border-left: solid 3px lightgray;
+  padding-left: 20px;
+}
+
+.post-stamp{
+  font-size: 0.8em;
+  padding: 10px;
+  border-radius: 20px;
+  background-color: lightgoldenrodyellow;
   margin-top: 10px;
-  --post-line-color: #ccc;
-  border: 1px solid #ccc;
-  margin-top: 10px;
-  margin-bottom: 10px;
-  overflow: hidden;
-  background-color: rgba(255, 255, 255, 0.8);
-  color: #878A8C;
-  position: relative;
-  border-radius: 4px;
+}
+
+.bl {
+  color: #FA1446;
+}
+
+.br {
+  color: #FA1446;
+}
+
+.user-posts-title {
+  border: solid 2px black;
+  border-radius: 20px;
+  margin-top: 2em;
+}
+
+.btn1{
+  color: black;
+  font-size: 1.4em;
+  transition: 0.2s;
+  background-color: white;
+  margin: 0.4em;
+  border: 5px solid transparent;
+  transition: all 0.2s ease-in-out;
+}
+
+.btn1:hover{
+  color: black;
+  font-size: 1.4em;
+  transition: 0.2s;
+  background-color: white;
+  margin: 0.4em;
+  outline: 0px solid transparent;
+  border-bottom: 5px solid black;
+  transition: all 0.2s ease-in-out;
+}
+
+.btn1:focus {
+  outline: none;
+}
+
+.auth-buttons {
+  font-size: 1.2em;
+  opacity: 0.7;
   padding: 5px;
 }
 
-.btnDiscard {
-  fill: #0079D3;
-  border: 1px solid;
-  border-radius: 4px;
-  text-align: center;
-  letter-spacing: 1px;
-  text-decoration: none;
-  font-size: 12px;
-  font-weight: 700;
-  letter-spacing: .5px;
-  line-height: 24px;
-  text-transform: uppercase;
-  padding: 3px 16px;
-  opacity: 1;
-  width: 288px;
-  height: 34px;
-  margin-top: 5px;
-  color: #0079D3;
-  background-color: transparent;
+.btn-auth {
+  margin-left: 1em;
 }
 
-.create-post-heading {
-  font-size: 18px;
-  font-weight: 500;
-  line-height: 22px;
-  color: #1c1c1c;
-  -ms-flex: 1;
-  flex: 1;
+.a-over {
+  text-decoration: none;
+  color:black;
 }
 
-.btnCreatePost {
-  background-color: #0079D3;
-  border-color: #0079D3;
-  color: aliceblue;
-  fill: #0079D3;
-  border: 1px solid;
-  border-radius: 4px;
-  text-align: center;
-  letter-spacing: 1px;
+.a-over:hover {
   text-decoration: none;
-  font-size: 12px;
-  font-weight: 700;
-  letter-spacing: .5px;
-  line-height: 24px;
-  text-transform: uppercase;
-  padding: 3px 16px;
-  opacity: 1;
-  width: 288px;
-  height: 34px;
+  color:black;
+}
+
+.btn-post{
+  padding: 0.4em;
+  color: white;
+  background-color: black;
+  border: solid 1px black;
+  border-radius: 5px;
+  margin-bottom: 1em;
+  transition: 0.5s;
+  font-size: 1.2em;
+  width: 100%;
+}
+
+.btn-post:hover{
+  padding: 0.4em;
+  background-color: black;
+  color: white;
+  border: solid 1px black;
+  border-radius: 5px;
+  margin-bottom: 1em;
+  transition: 0.5s;
+}
+
+.form-add-post {
+  margin-top: 4em;
+}
+
+.custom-textarea {
+  border: solid 2px black;
+}
+
+.h3-post {
+  color: black;
+}
+
+.container-add-post {
+  background-color: white;
+  border-radius: 1.5em;
+  padding: 5em;
+  box-shadow: 0 0 7px black;
+  opacity: 0.8;
+  margin-bottom: 10em;
+}
+
+
+.btn-post2 {
+  margin-top: 1em;
+  font-size: 1.5em;
+  padding-left: 1.3em;
+  padding-right: 1.3em;
+  border-radius: 1em;
+  border: none;
+  background-color: lightcoral;
+  color: white;
+  transition: 0.3s;
+}
+
+.btn-post2:hover {
+  background-color: lightgreen;
+  transition: 0.3s;
+}
+
+.btn-post2:focus {
+  outline: none;
+}
+
+.online-users {
+  background-color: lightgrey;
+  border-radius: 0.5em;
+}
+
+.chat-container {
+  background-color: lightgrey;
+  border-radius: 0.5em;
+}
+
+.break-text {
+  word-wrap: break-word;
+}
+
+.custom-title-1 {
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+
+.dot-on {
+  height: 0.5em;
+  width: 0.5em;
+  background-color: greenyellow;
+  border-radius: 50%;
+  display: inline-block;
+  opacity: 0.7;
+  box-shadow: 0 0 5px green,
+  0 2px 5px green;
+}
+
+.dot-off {
+  height: 0.5em;
+  width: 0.5em;
+  background-color: orangered;
+  border-radius: 50%;
+  display: inline-block;
+  opacity: 0.7;
+  box-shadow: 0 0 5px red,
+  0 2px 5px red;
+}
+
+.chat-msg {
+  background-color: white;
+  padding: 1em;
+  margin: 1em;
+  border-radius: 1em;
+}
+
+.chat-user {
+  color: lightcoral;
+  font-size: 1.5em;
+}
+
+.chat-title {
+  font-size: 2.5em;
+  color: grey;
+  font-weight: 600;
 }

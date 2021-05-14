@@ -31,4 +31,5 @@ public class SubPage {
     private Instant createdDate;
     @ManyToOne(fetch = LAZY)
     private User user;
+    private String date;
 }

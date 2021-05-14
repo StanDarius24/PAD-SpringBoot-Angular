@@ -1,9 +1,8 @@
 import { Injectable } from '@angular/core';
-import {HttpClient} from '@angular/common/http';
-import {Observable} from 'rxjs';
-import {Postmodel} from '../models/postmodel';
-import {PostCreateModel} from '../models/PostCreateModel';
-
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
+import { Postmodel } from '../models/postmodel';
+import { PostCreateModel } from '../models/PostCreateModel';
 @Injectable({
   providedIn: 'root'
 })
@@ -21,5 +20,10 @@ export class PostService {
   createPost(postPayload: PostCreateModel): Observable<any> {
     console.log(postPayload);
     return this.http.post('http://localhost:8080/SocialMedia/', postPayload);
+  }
+
+  getemail(mail:string): Observable<any> {
+    console.log('http://localhost:8080/auth/' + mail);
+    return this.http.get('http://localhost:8080/auth/' + mail);
   }
 }

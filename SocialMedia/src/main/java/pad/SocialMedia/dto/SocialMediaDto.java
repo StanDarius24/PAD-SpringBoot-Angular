@@ -14,5 +14,5 @@ public class SocialMediaDto {
     private Long id;
     private String name;
     private String description;
-
+    private String date;
 }

@@ -1,19 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { SingupComponent } from './singup.component';
 
-describe('SingupComponent', () => {
-  let component: SingupComponent;
-  let fixture: ComponentFixture<SingupComponent>;
+import { NotallowedComponent } from './notallowed.component';
+
+describe('NotallowedComponent', () => {
+  let component: NotallowedComponent;
+  let fixture: ComponentFixture<NotallowedComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ SingupComponent ]
+      declarations: [ NotallowedComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(SingupComponent);
+    fixture = TestBed.createComponent(NotallowedComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

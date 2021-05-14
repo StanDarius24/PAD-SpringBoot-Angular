@@ -1,22 +1,28 @@
 package com.example.chatserver.pojo;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+
+
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+@Entity
 public class User {
-	
-	private int id;
-	
-	private String userName;
-	
-	public User(int id, String userName) {
-		this.id = id;
-		this.userName = userName;
-	}
+    @Id
+    @GeneratedValue()
+    @Column(name = "userId")
+    private int userId;
+    @Column(name = "username")
+    private String username;
 
-	public int getId() {
-		return id;
-	}
-
-	public String getUserName() {
-		return userName;
-	}
-
+    public String getUserName() {
+        return username;
+    }
 }

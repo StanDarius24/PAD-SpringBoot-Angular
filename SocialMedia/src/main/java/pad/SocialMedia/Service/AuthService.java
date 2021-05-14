@@ -28,7 +28,6 @@ import java.util.UUID;
 @AllArgsConstructor
 public class AuthService {
 
-
     private final PasswordEncoder passwordEncoder;
     private final VerificationTokenRepository verificationTokenRepository;
     private final UserRepository userRepository;
@@ -75,6 +74,11 @@ public class AuthService {
 
     }
 
+    public String getemail(String name) {
+        User user = userRepository.findByUsername(name).orElseThrow(() -> new TokenException("User inexistent"));
+        return user.getEmail();
+    }
+
     public AuthentificationResponse refreshToken(RefreshTokenRequest refreshTokenRequest) {
         refreshTokenService.validateRefreshToken(refreshTokenRequest.getRefreshToken());
         String token = jwtProvider.generateTokenWithUserName(refreshTokenRequest.getUsername());
@@ -85,7 +89,6 @@ public class AuthService {
                 .username(refreshTokenRequest.getUsername())
                 .build();
     }
-
 
     public AuthentificationResponse login(LoginRequest loginRequest) {
         Authentication authentication = authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(loginRequest.getUsername(),
@@ -99,6 +102,5 @@ public class AuthService {
                 .expiresAt(Instant.now().plusMillis(jwtProvider.getJwtExpirationInMillis()))
                 .username(loginRequest.getUsername())
                 .build();
-
     }
 }

@@ -1,9 +1,34 @@
-<div>
-  <div class="panel panel-primary text-center" *ngFor="let Mod of posts">
+<div class="body-profile">
+  <div class="container container-custom-1">
+    <div class="row">
+      <div class="col-12 text-center">
+        <h2 class="custom-main-title">Your profile</h2>
+      </div>
+    </div>
 
-    <div class="panel-heading">
-      <h1>{{Mod.name}}</h1>
+    <div class="row user-data">
+      <div class="col-12 text-center user-data">
+        <h3 class="user-username">
+          <span class="bl"><</span>
+          {{tatalor}}
+          <span class="br">></span>
+        </h3>
+        <h2 class="user-other"> {{mail}} </h2>
+        <h2 class="user-other"> I'm just a simple viking trying to get into Valhall, don't mind me. Also, sköl! </h2>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-4"></div>
+      <div class="col-4 text-center">
+        <h2 class="user-posts-title"> Your posts </h2>
+        <div class="panel panel-primary text-center" *ngFor="let Mod of posts">
+        <h1>
+          {{Mod.name}}
+        </h1>
+        </div>
+      </div>
+      <div clas="col-4"></div>
     </div>
   </div>
-
 </div>

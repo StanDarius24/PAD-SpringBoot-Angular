@@ -1,8 +1,7 @@
-import {Handler} from './handler';
-import {LoginRequest} from '../models/LoginRequest';
-import {Observable} from 'rxjs';
-import {Injectable} from '@angular/core';
-
+import { Handler } from './handler';
+import { LoginRequest } from '../models/LoginRequest';
+import { Observable } from 'rxjs';
+import { Injectable } from '@angular/core';
 @Injectable()
 export class Chatservice{
   constructor(private xhrhandler: Handler) {

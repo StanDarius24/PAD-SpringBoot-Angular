@@ -2,14 +2,14 @@ import { Component } from '@angular/core';
 import {Message} from '../../models/message';
 import {Appdata} from '../../shared/appdata';
 import {WebSocketService} from '../../shared/Websocket';
-
+import * as CryptoJS from 'crypto-js';
 @Component({
   selector: 'app-stream',
   templateUrl: './stream.component.html',
   styleUrls: ['./stream.component.css']
 })
-export class StreamComponent {
 
+export class StreamComponent {
   message: string = '';
   publishedMessage: Message[] = new Array();
   showTypingIndicator: boolean = false;
@@ -25,9 +25,13 @@ export class StreamComponent {
   }
 
   startListening() {
+
     this.websocket.onmessage = (event: MessageEvent) => {
       let message: Message = JSON.parse(event.data);
       if (message.type == 'MESSAGE') {
+
+        message.message = CryptoJS.AES.decrypt(message.message,'padproj').toString(CryptoJS.enc.Utf8);
+
         this.publishedMessage.push(message);
       } else if (message.type == 'TYPING') {
         if (message.from != this.loggedinUserId) {
@@ -40,6 +44,9 @@ export class StreamComponent {
   sendMessage() {
     let msg = this.message;
     if (msg == '' || msg == undefined) return;
+
+    msg = CryptoJS.AES.encrypt(msg,"padproj").toString();
+
 
     let message: Message = {
       type: 'MESSAGE',
@@ -74,5 +81,4 @@ export class StreamComponent {
       this.showTypingIndicator = false;
     }
   }
-
 }
