@@ -2,6 +2,10 @@ package com.example.chatserver.controller;
 
 import com.example.chatserver.pojo.LoginRequest;
 import com.example.chatserver.pojo.User;
+import com.example.chatserver.pojo.UserX;
+import com.example.chatserver.repository.UsersRepository;
+import com.example.chatserver.resources.UsersResource;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -17,45 +21,53 @@ import javax.servlet.http.HttpServletResponse;
 @CrossOrigin
 @RestController
 public class AppController {
-
 	private List<User> validUsers = new ArrayList<>();
-	
+	@Autowired
+	private UsersRepository usersRepository;
 	@RequestMapping(value = "/user/login", method = RequestMethod.POST)
 	public User userLogin(@RequestBody LoginRequest loginRequest, HttpServletResponse response) {
-		Optional<User> user = getValidUsers()
-								.stream()
-								.filter(u -> u.getUserName().equalsIgnoreCase(loginRequest.getName()))
-								.findFirst();
-		
-		if (user.isPresent()) {
-			return user.get();
-		} else {
+		System.out.println(usersRepository.findAll());
+
+		Optional<User> userx =usersRepository.findAll().stream().filter(u -> u.getUserName().equalsIgnoreCase(loginRequest.getName())).findFirst();
+
+
+//		Optional<User> userx = getValidUsers()
+//				.stream()
+//				.filter(u -> u.getUserName().equalsIgnoreCase(loginRequest.getName()))
+//				.findFirst();
+//
+////		Optional<UserX> user = getValidUsers()
+////								.stream()
+////								.filter(u -> u.getUserName().equalsIgnoreCase(loginRequest.getName()))
+////								.findFirst();
+//
+//		if (userx.isPresent()) {
+//			return userx.get();
+//		} else {
+//			response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
+//			return null;
+//		}
+
+		if(userx.isPresent())
+		{
+			return userx.get();
+		} else
+		{
 			response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
 			return null;
 		}
+
 	}
 	
-	@RequestMapping(value = "/user/list", method = RequestMethod.GET)
+
 	public List<User> listUsers() {
-		return getValidUsers();
+		return usersRepository.findAll();
 	}
 	
 	private List<User> getValidUsers() {
-		if (!validUsers.isEmpty()) {
-			return validUsers;
-		} else {
-			validUsers.add(new User(1, "admin"));
-			validUsers.add(new User(2, "qwerty"));
-			validUsers.add(new User(3, "Marry"));
-			validUsers.add(new User(4, "Pippin"));
-			validUsers.add(new User(5, "Gollum"));
-			validUsers.add(new User(6, "Gandalf"));
-			validUsers.add(new User(7, "Aragorn"));
-			validUsers.add(new User(8, "Boromir"));
-			validUsers.add(new User(9, "Legolas"));
-			validUsers.add(new User(10, "Gimli"));
-			return validUsers;
-		}
+		return usersRepository.findAll();
+
 	}
+
 
 }

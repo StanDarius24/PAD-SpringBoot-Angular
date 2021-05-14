@@ -21,20 +21,7 @@
   <component name="ChangeListManager">
     <list default="true" id="36d69301-7637-46c4-89cc-7503c06feb23" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularFront/src/app/app.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/AngularFront/src/app/app.component.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularFront/src/app/app.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/AngularFront/src/app/app.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularFront/src/app/auth/shared/auth.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/AngularFront/src/app/auth/shared/auth.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularFront/src/app/header/header.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/AngularFront/src/app/header/header.component.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularFront/src/app/home/home.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/AngularFront/src/app/home/home.component.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularFront/src/app/home/home.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/AngularFront/src/app/home/home.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularFront/src/app/models/PostCreateModel.ts" beforeDir="false" afterPath="$PROJECT_DIR$/AngularFront/src/app/models/PostCreateModel.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularFront/src/app/posts/posts.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/AngularFront/src/app/posts/posts.component.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularFront/src/app/posts/posts.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/AngularFront/src/app/posts/posts.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularFront/src/app/profile/profile.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/AngularFront/src/app/profile/profile.component.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularFront/src/app/profile/profile.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/AngularFront/src/app/profile/profile.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularFront/src/app/profile/profile.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/AngularFront/src/app/profile/profile.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularFront/src/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/AngularFront/src/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SocialMedia/src/main/java/pad/SocialMedia/Service/AuthService.java" beforeDir="false" afterPath="$PROJECT_DIR$/SocialMedia/src/main/java/pad/SocialMedia/Service/AuthService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SocialMedia/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/SocialMedia/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -74,6 +61,8 @@
       <workItem from="1619816871010" duration="15000" />
       <workItem from="1620332852719" duration="985000" />
       <workItem from="1620770581294" duration="369000" />
+      <workItem from="1620911222839" duration="14000" />
+      <workItem from="1620911314703" duration="43000" />
     </task>
     <servers />
   </component>
@@ -90,5 +79,6 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
 </project>
