@@ -275,3 +275,9 @@
   color: grey;
   font-weight: 600;
 }
+.myStyle{
+  text-align:center; margin-top: 100px;
+}
+.style-mat-card{
+  margin-top:10px; width: 100%;
+}

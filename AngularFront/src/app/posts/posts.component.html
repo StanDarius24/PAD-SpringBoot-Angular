@@ -11,6 +11,10 @@
           <textarea class="form-control form-textarea" type="text" [formControlName]="'description'" style="background-color: black; border-radius: 0.7em; color: greenyellow; font-size:1.2em;"
                     placeholder="Description$"></textarea>
           <div>
+
+            <div>
+              <input type="file" (change)="upload($event)" accept="*.png.jpg" id="">
+            </div>
             <div style="margin-top: 5px" class="float-right">
               <button (click)="discard()" class="btn-post2" >Discard</button>
               <button class="btn-post2"  >Create</button>

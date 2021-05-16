@@ -10,4 +10,6 @@ import java.util.Optional;
 public interface SubPageRepository extends JpaRepository<SubPage, Long> {
 
     Optional<SubPage> findByName(String subpageName);
+
+    void deleteById(int id);
 }

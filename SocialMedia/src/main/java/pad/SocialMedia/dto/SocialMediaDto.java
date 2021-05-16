@@ -15,4 +15,6 @@ public class SocialMediaDto {
     private String name;
     private String description;
     private String date;
+    private String userName;
+
 }

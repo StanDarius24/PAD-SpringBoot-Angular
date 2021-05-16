@@ -24,7 +24,7 @@ import { WebSocketService } from './shared/Websocket';
 import { Handler } from './shared/handler';
 import { Chatservice } from './shared/chatservice';
 import { LoginchatComponent } from './chat/loginchat/loginchat.component';
-import { NotallowedComponent } from './notallowed/notallowed.component';
+
 
 // aici tre sa instalati pachetele pe care le am folosit. O metoda simpla
 // e sa cautati exact pe google ce e dupa from
@@ -45,7 +45,7 @@ import { NotallowedComponent } from './notallowed/notallowed.component';
     StreamComponent,
     UsersComponent,
     LoginchatComponent,
-    NotallowedComponent,
+
   ],
   imports: [
     BrowserModule,
