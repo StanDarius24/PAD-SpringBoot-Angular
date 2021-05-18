@@ -2,6 +2,7 @@ package pad.SocialMedia.Service;
 
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import pad.SocialMedia.Exceptions.SocialMediaException;
 import pad.SocialMedia.Mapper.MapperSubpage;
@@ -18,8 +19,9 @@ import static java.util.stream.Collectors.toList;
 @AllArgsConstructor
 @Slf4j
 public class SocialMediaService {
-
+    @Autowired
     private final SubPageRepository subPageRepository;
+    @Autowired
     private final MapperSubpage subpageMapper;
 
     @Transactional
@@ -46,6 +48,12 @@ public class SocialMediaService {
         SubPage subpage = subPageRepository.findById(id)
                 .orElseThrow(() -> new SocialMediaException("No subpage found with ID - " + id));
         return subpageMapper.mapSocialMediaDto(subpage);
+    }
+
+    public void deleteSocialMedia(Long id){
+        System.out.println("deletesocial " +id);
+        subPageRepository.deleteById(id);
+        System.out.println(subpageMapper);
     }
 
 

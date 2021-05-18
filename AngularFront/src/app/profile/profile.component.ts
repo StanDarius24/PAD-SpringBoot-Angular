@@ -30,23 +30,34 @@ export class ProfileComponent implements OnInit {
     this.commentForm = new FormGroup({
       text: new FormControl('', Validators.required)
     });
-    this.postService.getAllPosts().subscribe( post =>
-    {
-      this.posts = post;
-    });
+
+    this.postService.getPostName(this.tatalor).subscribe(
+      post =>
+      {
+        console.log(this.posts);
+        this.posts = post;
+      }
+    )
 
 
+      console.log(this.posts);
 
       this.postService.getemail(this.tatalor).subscribe(
         post => {
 
         }, error => {
           this.mail = error.error.text;
-          console.log(error.error.text);
+
         }
       );
 
 
+  }
+
+  delete(id:number):void{
+    console.log(id);
+    this.postService.delete(id);
+    this.router.navigateByUrl('/');
   }
 
   ngOnInit(): void {

@@ -32,4 +32,6 @@ public class SubPage {
     @ManyToOne(fetch = LAZY)
     private User user;
     private String date;
+    private String userName;
+
 }

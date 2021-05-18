@@ -17,7 +17,14 @@ chat-stream {
 }
 
 .logged-in-user {
-  float: right;
-  font-size: 25px;
-  padding-top: 6px;
+  font-size: 2.5em;
+  padding-top: 0.8em;
+  font-family: "Bookman Old Style";
 }
+.xxx {
+
+  /*background: linear-gradient(to right, #615664, grey);*/
+  background-color: white;
+}
+
+

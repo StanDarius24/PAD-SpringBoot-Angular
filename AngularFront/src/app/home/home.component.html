@@ -2,7 +2,7 @@
 <div class="container container-custom-1">
   <div class="row buttons-all">
     <button class="btn1" (click)="gotoprofil()"> <a class="a-over"> Profile </a> </button>
-    <button class="btn1" (click)="gotochat()"> <a  class="a-over"> Chat </a> </button>
+    <button type="submit" class="btn1" (click)="doLogin()"><a  class="a-over"> Chat </a></button>
     <button class="btn1" (click)="postss()"> <a  class="a-over"> Add post </a> </button>
   </div>
 
@@ -17,7 +17,27 @@
     <h5 class="post-border">
       {{i.description}}
     </h5>
+
+<!--    <div class="container row">-->
+<!--      <div class="col-md-12">-->
+<!--        <div *ngIf=i.file>-->
+<!--          <img class="img-preview" [src]="i.file" style="cursor: pointer;"/>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </div>-->
+
     <p class="post-stamp">{{i.date}} </p>
+    <div>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-3"></div>
+          <div class="col-md-3"></div>
+          <div class="col-md-3"></div>
+          <div class="col-md-3"><code>Posted by {{i.userName}}</code></div>
+        </div>
+      </div>
+    </div>
+
   </div>
 
   </div>

@@ -4,6 +4,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { throwError } from 'rxjs';
 import { PostCreateModel } from '../models/PostCreateModel';
+import {AuthService} from '../auth/shared/auth.service';
 
 @Component({
   selector: 'app-posts',
@@ -12,12 +13,15 @@ import { PostCreateModel } from '../models/PostCreateModel';
 })
 export class PostsComponent implements OnInit {
   date: Date;
+  path:string;
+  url:string;
   createForm: FormGroup;
   Model: PostCreateModel;
   title = new FormControl('');
   description = new FormControl('');
-
-  constructor(private router: Router, private subredditService: PostService) {
+  nameS:string;
+  constructor(private router: Router, private subredditService: PostService,private auth:AuthService) {
+    this.nameS = auth.getUserName();
     this.createForm = new FormGroup({
       title: new FormControl('', Validators.required),
       description: new FormControl('', Validators.required)
@@ -26,8 +30,16 @@ export class PostsComponent implements OnInit {
       name: '',
       description: '',
       date: '',
+      userName:'',
     }
   }
+
+  upload(e) :void {
+
+    this.path = e.target.files[0];
+    console.log(this.path);
+  }
+
 
   ngOnInit() {
   }
@@ -37,11 +49,15 @@ export class PostsComponent implements OnInit {
   }
 
   create() {
+
+
+
     this.Model.name = this.createForm.get('title')
       .value;
     this.Model.description = this.createForm.get('description')
       .value;
       this.date = new Date();
+      this.Model.userName = this.nameS;
       this.Model.date = this.date.toString().substr(0,this.date.toString().indexOf("GMT"));
     console.log(this.Model);
     this.subredditService.createPost(this.Model).subscribe(data => {

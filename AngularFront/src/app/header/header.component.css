@@ -45,6 +45,10 @@
   opacity: 0.6;
 }
 
+.login:hover{
+  opacity: 0.6;
+}
+
 .userdetails{
   background-color: transparent;
   border-color: #0079D3;
@@ -96,12 +100,5 @@
 }
 
 #rightchild{
-  top: 1px;
-  margin-left: auto;
-  margin-right: auto;
-  width:160px;
-  right:0;
-  bottom: 1px;
   background: #000b2d;
-  position:absolute;
 }

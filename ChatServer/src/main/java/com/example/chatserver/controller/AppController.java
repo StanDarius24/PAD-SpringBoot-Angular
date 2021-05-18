@@ -31,23 +31,6 @@ public class AppController {
 		Optional<User> userx =usersRepository.findAll().stream().filter(u -> u.getUserName().equalsIgnoreCase(loginRequest.getName())).findFirst();
 
 
-//		Optional<User> userx = getValidUsers()
-//				.stream()
-//				.filter(u -> u.getUserName().equalsIgnoreCase(loginRequest.getName()))
-//				.findFirst();
-//
-////		Optional<UserX> user = getValidUsers()
-////								.stream()
-////								.filter(u -> u.getUserName().equalsIgnoreCase(loginRequest.getName()))
-////								.findFirst();
-//
-//		if (userx.isPresent()) {
-//			return userx.get();
-//		} else {
-//			response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
-//			return null;
-//		}
-
 		if(userx.isPresent())
 		{
 			return userx.get();

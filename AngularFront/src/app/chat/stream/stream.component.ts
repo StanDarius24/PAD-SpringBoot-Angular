@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+  import { Component, AfterViewChecked, ElementRef, ViewChild, OnInit } from '@angular/core';
 import {Message} from '../../models/message';
 import {Appdata} from '../../shared/appdata';
 import {WebSocketService} from '../../shared/Websocket';
@@ -9,7 +9,8 @@ import * as CryptoJS from 'crypto-js';
   styleUrls: ['./stream.component.css']
 })
 
-export class StreamComponent {
+export class StreamComponent implements OnInit, AfterViewChecked{
+  @ViewChild('scrollMe') private myScrollContainer: ElementRef;
   message: string = '';
   publishedMessage: Message[] = new Array();
   showTypingIndicator: boolean = false;
@@ -80,5 +81,19 @@ export class StreamComponent {
     if (this.showTypingIndicator) {
       this.showTypingIndicator = false;
     }
+  }
+
+  ngOnInit() {
+    this.scrollToBottom();
+  }
+
+  ngAfterViewChecked() {
+    this.scrollToBottom();
+  }
+
+  scrollToBottom(): void {
+    try {
+      this.myScrollContainer.nativeElement.scrollTop = this.myScrollContainer.nativeElement.scrollHeight;
+    } catch(err) { }
   }
 }
