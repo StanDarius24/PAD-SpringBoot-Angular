@@ -12,6 +12,7 @@
   overflow-y: auto;
   scroll-behavior: auto;
   height: 100%;
+
 }
 
 .chat-message {
@@ -45,8 +46,6 @@
 
 .container {
   background-color: white;
-  margin: 20px;
-  margin-top: 40px;
 }
 
 .container-custom-1 {
@@ -320,6 +319,7 @@
 
 .container-custom-2 {
   background-color: lightgrey;
+  border-radius: 2em;
 }
 
 .ou {
@@ -345,18 +345,19 @@
 }
 
 .container-chat-room {
-  background: linear-gradient(to right, #615664, grey);
-  padding: 0.5em;
+  background-color: lightgray;
   border-radius: 1em;
 
 }
 
 .chat-room-msg {
+  opacity: 0.8;
   background-color: black;
   color: greenyellow;
   border-radius: 1em;
   padding: 0.6em;
   margin-top: 2em;
+  font-size: 1.3em;
 }
 
 .chat-room-msg-username {

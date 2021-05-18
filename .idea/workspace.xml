@@ -19,10 +19,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="36d69301-7637-46c4-89cc-7503c06feb23" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SocialMedia/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/SocialMedia/src/main/resources/application.properties" afterDir="false" />
-    </list>
+    <list default="true" id="36d69301-7637-46c4-89cc-7503c06feb23" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -46,7 +43,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/AngularFront" />
     <property name="settings.editor.selected.configurable" value="MTHome" />
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -63,6 +60,7 @@
       <workItem from="1620770581294" duration="369000" />
       <workItem from="1620911222839" duration="14000" />
       <workItem from="1620911314703" duration="43000" />
+      <workItem from="1621377536140" duration="30000" />
     </task>
     <servers />
   </component>
@@ -80,5 +78,11 @@
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1621377564001">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1621377564001" />
   </component>
 </project>
